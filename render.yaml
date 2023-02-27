@@ -4,11 +4,10 @@ services:
     env: node
     plan: free
     buildCommand:
-      yarn --frozen-lockfile --prod=false &&
+      npm install &&
       blitz prisma generate &&
-      blitz build &&
-      blitz prisma migrate deploy
-    startCommand: blitz start -p ${PORT}
+      blitz build 
+    startCommand: blitz start -p 80
     envVars:
       - key: NODE_ENV
         value: production
