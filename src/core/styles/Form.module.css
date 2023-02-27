@@ -1,0 +1,9 @@
+.form > * + * {
+    margin-top: 1rem;
+}
+
+.wrapButton{
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+}

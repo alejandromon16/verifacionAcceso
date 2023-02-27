@@ -2,8 +2,9 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 datasource db {
-  provider = "sqlite"
-  url      = env("DATABASE_URL")
+  provider          = "postgresql"
+  url               = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
 generator client {
@@ -13,13 +14,13 @@ generator client {
 // --------------------------------------
 
 model User {
-  id             Int      @id @default(autoincrement())
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
+  id             Int       @id @default(autoincrement())
+  createdAt      DateTime? @default(now())
+  updatedAt      DateTime? @updatedAt
   name           String?
-  email          String   @unique
+  email          String    @unique
   hashedPassword String?
-  role           String   @default("USER")
+  role           String?   @default("USER")
 
   tokens   Token[]
   sessions Session[]
@@ -55,6 +56,19 @@ model Token {
   userId Int
 
   @@unique([hashedToken, type])
+}
+
+model EnrolledPerson {
+  id           String   @id @default(uuid())
+  createdAt    DateTime? @default(now())
+  updatedAt    DateTime? @updatedAt
+  name         String
+  carnet       String
+  email        String
+  phoneNumber  String
+  church       String
+  entrance     Boolean   @default(false)
+  rol          String?   @default("MIEMBRO")
 }
 
 // NOTE: It's highly recommended to use an enum for the token type

@@ -1,0 +1,46 @@
+.button{
+    padding: 12px 120px;
+    background-color: #128287;
+    border-radius: 10px;
+    border: none;
+    transition: .2s ease-in-out 0s;
+    color: white;
+    font-weight: 600;
+    font-size: 16px ;
+}
+
+.button:hover{
+    transform: scale(1.10);
+}
+
+.loading-button:active {
+    background-color: #0052a1;
+}
+
+.loading-button:disabled {
+opacity: 0.5;
+cursor: not-allowed;
+}
+
+.spinner {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+border: 0.25rem solid rgba(255, 255, 255, 0.3);
+border-radius: 50%;
+border-top-color: white;
+width: 1.5rem;
+height: 1.5rem;
+animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+to {
+    transform: rotate(360deg);
+}
+}  
+
+  
+  
+  

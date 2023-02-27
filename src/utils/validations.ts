@@ -11,6 +11,12 @@ export const password = z
   .max(100)
   .transform((str) => str.trim())
 
+const searchEnrolledPersonInput = z
+  .string()
+  .min(1)
+  .max(10)
+  .transform((str) => str.toLowerCase().trim())
+
 export const Signup = z.object({
   email,
   password,
@@ -19,6 +25,10 @@ export const Signup = z.object({
 export const Login = z.object({
   email,
   password: z.string(),
+})
+
+export const SearchEnrolledPersonSchema = z.object({
+  searchEnrolledPersonInput,
 })
 
 export const ForgotPassword = z.object({
@@ -32,7 +42,7 @@ export const ResetPassword = z
     token: z.string(),
   })
   .refine((data) => data.password === data.passwordConfirmation, {
-    message: "Passwords don't match",
+    message: "Las contrasenas no son iguales",
     path: ["passwordConfirmation"], // set the path of the error
   })
 

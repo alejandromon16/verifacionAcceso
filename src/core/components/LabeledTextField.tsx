@@ -1,5 +1,7 @@
 import { forwardRef, ComponentPropsWithoutRef, PropsWithoutRef } from "react"
 import { useField, UseFieldConfig } from "react-final-form"
+import styles from '../styles/LabeledTextField.module.css'
+
 
 export interface LabeledTextFieldProps extends PropsWithoutRef<JSX.IntrinsicElements["input"]> {
   /** Field name. */
@@ -32,7 +34,9 @@ export const LabeledTextField = forwardRef<HTMLInputElement, LabeledTextFieldPro
     return (
       <div {...outerProps}>
         <label {...labelProps}>
-          {label}
+          <span>
+            {label}
+          </span>
           <input {...input} disabled={submitting} {...props} ref={ref} />
         </label>
 
@@ -51,11 +55,16 @@ export const LabeledTextField = forwardRef<HTMLInputElement, LabeledTextFieldPro
           }
           input {
             font-size: 1rem;
-            padding: 0.25rem 0.5rem;
-            border-radius: 3px;
-            border: 1px solid purple;
+            padding: 0.7rem 0.5rem;
+            border-radius: 5px;
+            border: 1px solid #B3B3B3;
             appearance: none;
             margin-top: 0.5rem;
+            width: 100%;
+            outline-color: #128287;
+          }
+          span {
+            padding-left: 0.5rem;
           }
         `}</style>
       </div>

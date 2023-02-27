@@ -1,0 +1,11 @@
+.boxForm{
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    padding: 10px 50px;
+    row-gap: 30px;
+}
+
+.title{
+    margin: 0px;
+}
