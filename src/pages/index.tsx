@@ -12,13 +12,7 @@ import { useRouter } from "next/router"
 
 const UserAuthForm = () => {
   const router = useRouter();
-  const currentUser = useCurrentUser()
-  
-  if(currentUser){
-    return (
-      <div>you are logged</div>
-    )
-  }else{
+
     return (
       <Layout title="Congreso Sedientos Auth">
         <LoginForm
@@ -29,7 +23,6 @@ const UserAuthForm = () => {
         />
       </Layout>
     )
-  }
 }
 
 const Home: BlitzPage = () => {
