@@ -22,11 +22,12 @@ export const EnrolledPerson = () => {
   });
   const [updateEntranceEnrolledPersonMutation] = useMutation(updateEntranceEnrolledPerson);
 
-  const handleClick = async () => {
+  const handleClick = async (): Promise<boolean> => {
    const updateEntrance = await updateEntranceEnrolledPersonMutation({id: enrolledPerson?.id});
    if(updateEntrance){
     await router.replace('/admin/');
-   } 
+   }
+   return updateEntrance 
   }
 
   if(enrolledPerson == null){

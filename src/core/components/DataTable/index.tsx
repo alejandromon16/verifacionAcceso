@@ -13,10 +13,10 @@ const Table = ({ columns, data }) => {
     <div className={styles.tableContainer}>
         <table className={styles.table} {...getTableProps()}>
         <thead>
-            {headerGroups.map((headerGroup) => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
-                {headerGroup.headers.map((column) => (
-                <th className={styles.th} {...column.getHeaderProps()}>{column.render("Header")}</th>
+            {headerGroups.map((headerGroup, i) => (
+            <tr key={i} {...headerGroup.getHeaderGroupProps()}>
+                {headerGroup.headers.map((column,i) => (
+                <th key={i} className={styles.th} {...column.getHeaderProps()}>{column.render("Header")}</th>
                 ))}
             </tr>
             ))}
@@ -26,8 +26,8 @@ const Table = ({ columns, data }) => {
             prepareRow(row)
             return (
                 <tr {...row.getRowProps()} key={i}>
-                {row.cells.map((cell) => (
-                    <td className={styles.td} {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                {row.cells.map((cell,i) => (
+                    <td key={i} className={styles.td} {...cell.getCellProps()}>{cell.render("Cell")}</td>
                 ))}
                 </tr>
             )

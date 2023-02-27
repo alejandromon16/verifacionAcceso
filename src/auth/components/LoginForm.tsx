@@ -6,10 +6,16 @@ import { Login } from "src/utils/validations"
 import { useMutation } from "@blitzjs/rpc"
 import { Routes } from "@blitzjs/next"
 import styles from './styles/LoginForm.module.css';
+import { User } from "@prisma/client"
 
 
 type LoginFormProps = {
   onSuccess?: (user: PromiseReturnType<typeof login>) => void
+}
+
+interface Values {
+  email:string;
+  password:string;
 }
 
 export const LoginForm = (props: LoginFormProps) => {
@@ -25,7 +31,7 @@ export const LoginForm = (props: LoginFormProps) => {
         submitText="Login"
         schema={Login}
         initialValues={{ email: "avivamiento@gmail.com", password: "" }}
-        onSubmit={async (values: { email: string; password: string } | undefined) => {
+        onSubmit={async (values:Values | undefined) => {
           try {
             const user = await loginMutation(values)
             props.onSuccess?.(user)

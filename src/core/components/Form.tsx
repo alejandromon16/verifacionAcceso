@@ -15,7 +15,7 @@ export interface FormProps<S extends z.ZodType<any, any>>
   /** Text to display in the submit button */
   submitText?: string
   schema?: S
-  onSubmit: () => FinalFormProps<z.infer<S>>["onSubmit"]
+  onSubmit: (arg0: any) => Promise<any>
   initialValues?: FinalFormProps<z.infer<S>>["initialValues"]
 }
 

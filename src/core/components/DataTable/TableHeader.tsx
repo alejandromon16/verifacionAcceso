@@ -2,9 +2,6 @@ import React from "react"
 import { useFilters, useSortBy, ColumnInstance } from "react-table"
 import { FiArrowUp, FiArrowDown } from "react-icons/fi"
 
-import NumberRangeFilter from "./NumberRangeFilter"
-import SelectFilter from "./SelectFilter"
-import { FilterProps } from "./types"
 import styles from "./DataTable.module.css"
 
 type Props = {
@@ -14,10 +11,10 @@ type Props = {
 const TableHeader = ({ headerGroups }: Props) => {
   return (
     <thead>
-      {headerGroups.map((headerGroup) => (
-        <tr {...headerGroup.getHeaderGroupProps()}>
-          {headerGroup.headers.map((column: ColumnInstance<any>) => (
-            <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+      {headerGroups.map((headerGroup,i:number) => (
+        <tr key={i} {...headerGroup.getHeaderGroupProps()}>
+          {headerGroup.headers.map((column: ColumnInstance<any>,i:number) => (
+            <th key={i}{...column.getHeaderProps(column.getSortByToggleProps())}>
               {column.render("Header")}
               <span>
                 {column.isSorted

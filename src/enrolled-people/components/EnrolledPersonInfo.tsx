@@ -4,7 +4,7 @@ import styles from "./styles/EnrolledPersonInfo.module.css"
 
 interface Props {
     enrolledPerson: EnrolledPerson;
-    onClick?: () => boolean;
+    onClick?: () => Promise<boolean>;
 }
 
 export const EnrolledPersonInfo = ({enrolledPerson, onClick}: Props) => {

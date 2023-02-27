@@ -1,10 +1,9 @@
 import React from "react"
 import { Row, Cell } from "react-table"
 
-import { GetTableBodyProps } from "./types"
 
 type Props = {
-  getTableBodyProps: GetTableBodyProps,
+  getTableBodyProps: any,
   rows: Row[],
   prepareRow: (row: Row) => void,
 }
@@ -15,9 +14,9 @@ const TableBody = ({ getTableBodyProps, rows, prepareRow }: Props) => {
       {rows.map((row, i) => {
         prepareRow(row)
         return (
-          <tr {...row.getRowProps()}>
-            {row.cells.map((cell: Cell) => (
-              <td {...cell.getCellProps()}>
+          <tr key={i}{...row.getRowProps()}>
+            {row.cells.map((cell: Cell,i:number) => (
+              <td key={i} {...cell.getCellProps()}>
                 {cell.render("Cell")}
               </td>
             ))}

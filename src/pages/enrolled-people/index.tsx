@@ -31,8 +31,8 @@ export const EnrolledPeopleList = () => {
       <p style={{display:"flex",justifyContent:"center", marginBlock:"2rem" }}>Total de Participantes: {count}</p>
       <DataTableEnrolledPeople users={enrolledPeople}   />
       <div style={{paddingBottom:"10rem" }}>
-          <button text="anterior" disabled={page === 0} onClick={goToPreviousPage}>anterior</button>
-          <button text="siguiente" disabled={!hasMore} onClick={goToNextPage}>siguiente</button>
+          <button  disabled={page === 0} onClick={goToPreviousPage}>anterior</button>
+          <button  disabled={!hasMore} onClick={goToNextPage}>siguiente</button>
       </div>
     </div>
   );
@@ -51,7 +51,8 @@ const EnrolledPeoplePage = () => {
         <p>
             <Link href={Routes.NewEnrolledPersonPage()}>
               <Button 
-                text="+ Agregar Participante"
+              text="+ Agregar Participante" 
+              type="button"             
               />
             </Link>
         </p>
