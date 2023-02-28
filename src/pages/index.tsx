@@ -16,9 +16,8 @@ const UserAuthForm = () => {
     return (
       <Layout title="Congreso Sedientos Auth">
         <LoginForm
-          onSuccess={(_user) => {
-            const next = router.query.next ? decodeURIComponent(router.query.next as string) : "/admin/"
-            return router.push(next)
+          onSuccess={async (_user) => {
+            await router.replace("/admin/")
           }}
         />
       </Layout>
