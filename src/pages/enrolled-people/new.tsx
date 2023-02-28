@@ -51,6 +51,6 @@ const NewEnrolledPersonPage = () => {
   );
 };
 
-NewEnrolledPersonPage.authenticate = true;
+// NewEnrolledPersonPage.authenticate = true;
 
 export default NewEnrolledPersonPage;

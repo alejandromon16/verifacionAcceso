@@ -40,7 +40,7 @@ const SearchEnrolledPerson: BlitzPage = () => {
   );
 };
 
-SearchEnrolledPerson.authenticate = true;
-SearchEnrolledPerson.authenticate = {redirectTo: '/'};
+// SearchEnrolledPerson.authenticate = true;
+// SearchEnrolledPerson.authenticate = {redirectTo: '/'};
 
 export default SearchEnrolledPerson;
