@@ -53,6 +53,6 @@ const ShowEnrolledPersonPage = () => {
 };
 
 // ShowEnrolledPersonPage.authenticate = true;
-ShowEnrolledPersonPage.getLayout = (page) => <Layout>{page}</Layout>;
+// ShowEnrolledPersonPage.getLayout = (page) => <Layout>{page}</Layout>;
 
 export default ShowEnrolledPersonPage;

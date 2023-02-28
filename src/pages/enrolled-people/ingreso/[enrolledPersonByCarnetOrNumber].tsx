@@ -85,6 +85,6 @@ const ShowEnrolledPersonPageByCarnetOrNumber: BlitzPage = () => {
 };
 
 // ShowEnrolledPersonPageByCarnetOrNumber.authenticate = true;
-ShowEnrolledPersonPageByCarnetOrNumber.getLayout = (page) => <Layout>{page}</Layout>;
+// ShowEnrolledPersonPageByCarnetOrNumber.getLayout = (page) => <Layout>{page}</Layout>;
 
 export default ShowEnrolledPersonPageByCarnetOrNumber;
