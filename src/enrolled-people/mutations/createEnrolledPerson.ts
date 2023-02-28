@@ -14,7 +14,6 @@ const CreateEnrolledPerson = z.object({
 
 export default resolver.pipe(
   resolver.zod(CreateEnrolledPerson),
-  resolver.authorize(),
   async (input) => {
     // TODO: in multi-tenant app, you must add validation to ensure correct tenant
     const enrolledPerson = await db.enrolledPerson.create({ data: input });
