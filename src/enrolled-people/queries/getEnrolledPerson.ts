@@ -5,7 +5,7 @@ import { z } from "zod";
 
 
 export default resolver.pipe(
-  // resolver.authorize(),
+  resolver.authorize(),
   async ({enrolledPersonId}) => {
     // TODO: in multi-tenant app, you must add validation to ensure correct tenant
     const enrolledPerson = await db.enrolledPerson.findFirst({ where: { id:enrolledPersonId } });

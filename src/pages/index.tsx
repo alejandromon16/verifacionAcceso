@@ -32,5 +32,5 @@ const Home: BlitzPage = () => {
   )
 }
 
-// Home.redirectAuthenticatedTo = '/admin/'
+Home.redirectAuthenticatedTo = '/admin/'
 export default Home
