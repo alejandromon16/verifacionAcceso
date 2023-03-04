@@ -5,9 +5,8 @@ import { z } from "zod";
 
 const CreateEnrolledPerson = z.object({
   name: z.string(),
-  email: z.string(),
   carnet: z.string(),
-  phoneNumber: z.string().min(2).max(10),
+  phoneNumber: z.string().min(2).max(20),
   church: z.string(),
   rol: z.string().optional(),
 });

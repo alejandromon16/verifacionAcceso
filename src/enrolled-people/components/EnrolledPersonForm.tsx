@@ -9,7 +9,6 @@ export function EnrolledPersonForm<S extends z.ZodType<any, any>>(
   return (
     <Form<S> {...props}>
       <LabeledTextField name="name" label="Nombre" placeholder="Nombre Completo" />
-      <LabeledTextField name="email" label="Email" placeholder="Email" />
       <LabeledTextField name="carnet" label="Carnet" placeholder="Carnet" />
       <LabeledTextField name="phoneNumber" label="Numero de telefono" placeholder="Numero" />
       <LabeledTextField name="church" label="Congregacion" placeholder="Congregacion" />

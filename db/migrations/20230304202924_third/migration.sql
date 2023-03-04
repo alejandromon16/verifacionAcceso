@@ -1,0 +1,6 @@
+-- AlterTable
+ALTER TABLE "EnrolledPerson" ADD COLUMN     "superVip" BOOLEAN NOT NULL DEFAULT false,
+ADD COLUMN     "vip" BOOLEAN NOT NULL DEFAULT false,
+ALTER COLUMN "carnet" DROP NOT NULL,
+ALTER COLUMN "phoneNumber" DROP NOT NULL,
+ALTER COLUMN "church" DROP NOT NULL;

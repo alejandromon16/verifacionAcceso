@@ -20,7 +20,10 @@ export const EnrolledPersonInfo = ({enrolledPerson, onClick}: Props) => {
                 <p>Carnet: <span>{enrolledPerson.carnet}</span></p>
             </div>
             <div>
-                <p>Ingreso al evento: <span>{enrolledPerson.entrance ? "Si": "No"}</span></p>
+                <p>Ingreso al evento: <span>{enrolledPerson.entrance ? "Si": "No"}</span> 
+                <span>{enrolledPerson.vip ? "VIP":""}</span>
+                <span>{enrolledPerson.superVip ? "SUPERVIP":""}</span>
+                </p>
             </div>
 
             <div>
